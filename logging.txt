@@ -1,0 +1,31 @@
+Request method:	POST
+Request URI:	https://demoqa.com/Account/v1/GenerateToken
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=application/json
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "userName": "dungnguyen1",
+    "password": "Plschange1@1"
+}
+HTTP/1.1 200 OK
+Server: nginx/1.17.10 (Ubuntu)
+Date: Thu, 24 Sep 2020 23:27:00 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 282
+Connection: keep-alive
+X-Powered-By: Express
+ETag: W/"11a-HQtjF32JImwNrDs6xzz9g3ikY4I"
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImR1bmduZ3V5ZW4xIiwicGFzc3dvcmQiOiJQbHNjaGFuZ2UxQDEiLCJpYXQiOjE2MDA5OTAwMjB9.kGIiJ0TXR-1qvBkzsbdcSKx2vg5aofSosjQd6DChJ2o",
+    "expires": "2020-10-01T23:27:00.761Z",
+    "status": "Success",
+    "result": "User authorized successfully."
+}
