@@ -16,16 +16,16 @@ Body:
 }
 HTTP/1.1 200 OK
 Server: nginx/1.17.10 (Ubuntu)
-Date: Thu, 24 Sep 2020 23:27:00 GMT
+Date: Mon, 28 Sep 2020 09:27:05 GMT
 Content-Type: application/json; charset=utf-8
 Content-Length: 282
 Connection: keep-alive
 X-Powered-By: Express
-ETag: W/"11a-HQtjF32JImwNrDs6xzz9g3ikY4I"
+ETag: W/"11a-RTqZPgj80aGHUe47ggLBHILK8qk"
 
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImR1bmduZ3V5ZW4xIiwicGFzc3dvcmQiOiJQbHNjaGFuZ2UxQDEiLCJpYXQiOjE2MDA5OTAwMjB9.kGIiJ0TXR-1qvBkzsbdcSKx2vg5aofSosjQd6DChJ2o",
-    "expires": "2020-10-01T23:27:00.761Z",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImR1bmduZ3V5ZW4xIiwicGFzc3dvcmQiOiJQbHNjaGFuZ2UxQDEiLCJpYXQiOjE2MDEyODUyMjV9.cEbNQBnhJjrwOu8uPLB2VXEFZEvWP0WM5pxsDYrnbAw",
+    "expires": "2020-10-05T09:27:05.542Z",
     "status": "Success",
     "result": "User authorized successfully."
 }

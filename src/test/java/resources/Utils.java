@@ -5,10 +5,7 @@ import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.specification.RequestSpecification;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.PrintStream;
+import java.io.*;
 import java.util.Properties;
 
 public class Utils {
@@ -16,9 +13,9 @@ public class Utils {
     public static String HEADER_ACCEPT = "application/json";
     public static String HEADER_CONTENT_TYPE = "application/json";
 
-    public static String getGlobalValue(String key) throws IOException {
+    public  String getGlobalValue(String key) throws IOException {
         Properties prop = new Properties();
-        FileInputStream fis = new FileInputStream("/home/dungnguyen/bdd/apitesting/src/test/java/resources/global.properties");
+        InputStream fis = getClass().getClassLoader().getResourceAsStream("global.properties");
         prop.load(fis);
         return prop.getProperty(key);
     }
