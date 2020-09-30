@@ -5,7 +5,9 @@ Request params:	<none>
 Query params:	<none>
 Form params:	<none>
 Path params:	<none>
-Headers:		Accept=application/json
+Headers:		Content-Type=application/json
+				Accept=application/json
+				Content-Type=application/json; charset=UTF-8
 				Content-Type=application/json; charset=UTF-8
 Cookies:		<none>
 Multiparts:		<none>
@@ -16,16 +18,130 @@ Body:
 }
 HTTP/1.1 200 OK
 Server: nginx/1.17.10 (Ubuntu)
-Date: Mon, 28 Sep 2020 09:27:05 GMT
+Date: Wed, 30 Sep 2020 06:33:33 GMT
 Content-Type: application/json; charset=utf-8
 Content-Length: 282
 Connection: keep-alive
 X-Powered-By: Express
-ETag: W/"11a-RTqZPgj80aGHUe47ggLBHILK8qk"
+ETag: W/"11a-qfP2zbRv9txOXp231Z5AefxRYhw"
 
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImR1bmduZ3V5ZW4xIiwicGFzc3dvcmQiOiJQbHNjaGFuZ2UxQDEiLCJpYXQiOjE2MDEyODUyMjV9.cEbNQBnhJjrwOu8uPLB2VXEFZEvWP0WM5pxsDYrnbAw",
-    "expires": "2020-10-05T09:27:05.542Z",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImR1bmduZ3V5ZW4xIiwicGFzc3dvcmQiOiJQbHNjaGFuZ2UxQDEiLCJpYXQiOjE2MDE0NDc2MTN9.hGTJCPT9ZD4uf7GlE2U_DLUBVOx1_vHp6IQo9hlDz1Y",
+    "expires": "2020-10-07T06:33:33.255Z",
     "status": "Success",
     "result": "User authorized successfully."
 }
+Request method:	DELETE
+Request URI:	https://demoqa.com/BookStore/v1/Book
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Content-Type=application/json
+				Accept=application/json
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+				Authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImR1bmduZ3V5ZW4xIiwicGFzc3dvcmQiOiJQbHNjaGFuZ2UxQDEiLCJpYXQiOjE2MDE0NDc2MTN9.hGTJCPT9ZD4uf7GlE2U_DLUBVOx1_vHp6IQo9hlDz1Y
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "isbn": "9781449325862",
+    "userId": "50d02c25-7133-477c-97ca-e3782da569a7"
+}
+HTTP/1.1 204 No Content
+Server: nginx/1.17.10 (Ubuntu)
+Date: Wed, 30 Sep 2020 06:33:34 GMT
+Connection: keep-alive
+X-Powered-By: Express
+ETag: W/"76-MEXPUmu2r+1gd9DMZlpFiNTb5DU"
+Request method:	POST
+Request URI:	https://demoqa.com/Account/v1/GenerateToken
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Content-Type=application/json
+				Accept=application/json
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+				Authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImR1bmduZ3V5ZW4xIiwicGFzc3dvcmQiOiJQbHNjaGFuZ2UxQDEiLCJpYXQiOjE2MDE0NDc2MTN9.hGTJCPT9ZD4uf7GlE2U_DLUBVOx1_vHp6IQo9hlDz1Y
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "userName": "dungnguyen1",
+    "password": "Plschange1@1"
+}
+HTTP/1.1 200 OK
+Server: nginx/1.17.10 (Ubuntu)
+Date: Wed, 30 Sep 2020 06:33:35 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 282
+Connection: keep-alive
+X-Powered-By: Express
+ETag: W/"11a-ml6E+r59Hbkl5L0MdlO1MgXo0UI"
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImR1bmduZ3V5ZW4xIiwicGFzc3dvcmQiOiJQbHNjaGFuZ2UxQDEiLCJpYXQiOjE2MDE0NDc2MTV9.8PFSq_BELyVa_MYT9PKgsmL-ky-NF7uwMDPk9dWIhUI",
+    "expires": "2020-10-07T06:33:35.844Z",
+    "status": "Success",
+    "result": "User authorized successfully."
+}
+Request method:	DELETE
+Request URI:	https://demoqa.com/BookStore/v1/Book
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Content-Type=application/json
+				Accept=application/json
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+				Authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImR1bmduZ3V5ZW4xIiwicGFzc3dvcmQiOiJQbHNjaGFuZ2UxQDEiLCJpYXQiOjE2MDE0NDc2MTV9.8PFSq_BELyVa_MYT9PKgsmL-ky-NF7uwMDPk9dWIhUI
+				Content-Type=application/json; charset=UTF-8
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "isbn": "9781449331818",
+    "userId": "50d02c25-7133-477c-97ca-e3782da569a7"
+}
+HTTP/1.1 204 No Content
+Server: nginx/1.17.10 (Ubuntu)
+Date: Wed, 30 Sep 2020 06:33:36 GMT
+Connection: keep-alive
+X-Powered-By: Express
+ETag: W/"76-C2x9Xt33UVlk/7gU04kMFEH987Y"
