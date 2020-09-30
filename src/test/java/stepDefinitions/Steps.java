@@ -23,10 +23,11 @@ import java.util.Map;
 
 public class Steps extends Utils {
 
+    static String jsonString;
     private static LoginPayload loginPayload;
     private static AddBooksPayload addBooksPayload;
     private static DeleteBookPayload deleteBookPayload;
-    private static String jsonString;
+    private static String USER_ID;
     RequestSpecification request;
     Response response;
 
@@ -45,6 +46,8 @@ public class Steps extends Utils {
 //                    request.body(new byte[]{});
                     response = request.get(resourceAPI.getResource());
                     break;
+                case "getAccountAPI":
+                    response = request.get(resourceAPI.getResource() + "/" + USER_ID);
                 default:
                     System.out.println("no match");
             }
@@ -60,6 +63,10 @@ public class Steps extends Utils {
                     request.body(addBooksPayload);
                     response = request.post(resourceAPI.getResource());
                     break;
+                case "createAccountAPI":
+                    request.body(loginPayload);
+                    response = request.post(resourceAPI.getResource());
+                    break;
                 default:
                     System.out.println("no match");
             }
@@ -68,6 +75,9 @@ public class Steps extends Utils {
                 case "deleteBookAPI":
                     request.body(deleteBookPayload);
                     response = request.delete(resourceAPI.getResource());
+                    break;
+                case "deleteAllBooksAPI":
+                    response = request.delete(resourceAPI.getResource() + USER_ID);
                     break;
                 default:
                     System.out.println("no match");
@@ -102,4 +112,8 @@ public class Steps extends Utils {
         deleteBookPayload = new DeleteBookPayload(isbn, getGlobalValue("userId"));
     }
 
+    @Given("UserId {string}")
+    public void userid(String userId) {
+        USER_ID = userId;
+    }
 }

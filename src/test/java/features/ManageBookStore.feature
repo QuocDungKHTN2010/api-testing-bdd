@@ -22,3 +22,12 @@ Feature: Get, Add, and Delete book
       | isbn          |
       | 9781449325862 |
       | 9781449331818 |
+
+  @GetToken
+  Scenario Outline: As user, I want to delete all books
+    Given UserId "<userId>"
+    When user call "deleteAllBooksAPI" with "delete" http request
+    Then the API call got success with status code is 204
+    Examples:
+      | userId                               |
+      | 50d02c25-7133-477c-97ca-e3782da569a7 |

@@ -5,7 +5,10 @@ public enum APIResources {
     loginAPI("/Account/v1/GenerateToken"),
     getBooksAPI("/BookStore/v1/Books"),
     addBooksAPI("/BookStore/v1/Books"),
-    deleteBookAPI("/BookStore/v1/Book");
+    deleteBookAPI("/BookStore/v1/Book"),
+    createAccountAPI("/Account/v1/User"),
+    getAccountAPI("/Account/v1/User"),
+    deleteAllBooksAPI("/BookStore/v1/Books?UserId=");
 
     private final String resource;
 
