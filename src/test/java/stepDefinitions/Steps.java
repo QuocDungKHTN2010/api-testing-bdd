@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -17,6 +18,7 @@ import resources.Utils;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -115,5 +117,34 @@ public class Steps extends Utils {
     @Given("UserId {string}")
     public void userid(String userId) {
         USER_ID = userId;
+    }
+
+    @And("Response body has an item with key {string} and value {string} in a list")
+    public void responseBodyHasAnItemWithKeyAndValueInAList(String keyValue, String expectedValue) {
+        List<String> listValues = JsonPath.from(jsonString).get(keyValue);
+        Assert.assertTrue(listValues.contains(expectedValue));
+    }
+
+
+    @And("Response body has an item with key {string} and value {string} in a sub-list {string}")
+    public void responseBodyHasAnItemWithKeyAndValueInASubList(String keyValue, String expectedValue,
+                                                               String parentKeyValue) {
+        List listParentValues = JsonPath.from(jsonString).get(parentKeyValue);
+        boolean contains = false;
+        for (int i = 0; i < listParentValues.size(); i++) {
+            List listChildValues = (List) listParentValues.get(i);
+            for (int j = 0; j < listChildValues.size(); j++) {
+                LinkedHashMap map = (LinkedHashMap) listChildValues.get(j);
+                if (map.get(keyValue).equals(expectedValue)) {
+                    contains = true;
+                    break;
+                }
+
+            }
+            if (contains) {
+                break;
+            }
+        }
+        Assert.assertTrue(contains);
     }
 }
