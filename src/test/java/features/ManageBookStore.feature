@@ -31,3 +31,11 @@ Feature: Get, Add, and Delete book
     Examples:
       | userId                               |
       | 50d02c25-7133-477c-97ca-e3782da569a7 |
+
+  @GetToken @DeleteAllBooks @SmokeTest
+  Scenario: As user, I want to borrow all books
+    When user call "getBooksAPI" with "get" http request
+    Then the API call got success with status code is 200
+    When user collects all ISBN of books
+    When user call "addBooksAPI" with "post" http request
+    Then the API call got success with status code is 201

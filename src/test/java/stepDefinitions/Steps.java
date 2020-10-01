@@ -9,10 +9,7 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Assert;
-import pojo.AddBooksPayload;
-import pojo.DeleteBookPayload;
-import pojo.Isbn;
-import pojo.LoginPayload;
+import pojo.*;
 import resources.APIResources;
 import resources.Utils;
 
@@ -30,6 +27,7 @@ public class Steps extends Utils {
     private static AddBooksPayload addBooksPayload;
     private static DeleteBookPayload deleteBookPayload;
     private static String USER_ID;
+    GetBooksListResponse getBooksListResponse;
     RequestSpecification request;
     Response response;
 
@@ -146,5 +144,17 @@ public class Steps extends Utils {
             }
         }
         Assert.assertTrue(contains);
+    }
+
+    @When("user collects all ISBN of books")
+    public void userCollectsAllISBNOfBooks() throws IOException {
+        getBooksListResponse = GetBooksListResponse.parse(jsonString);
+        List<Book> books = getBooksListResponse.getBooks();
+        addBooksPayload = new AddBooksPayload();
+        addBooksPayload.userId = getGlobalValue("userId");
+        addBooksPayload.collectionOfIsbns = new ArrayList<>();
+        for (Book book : books) {
+            addBooksPayload.collectionOfIsbns.add(new Isbn(book.isbn));
+        }
     }
 }
