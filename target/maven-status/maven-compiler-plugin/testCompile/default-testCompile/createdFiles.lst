@@ -1,3 +1,5 @@
 stepDefinitions/Steps.class
 runners/TestRunner.class
+resources/APIResources.class
 resources/Utils.class
+stepDefinitions/Hooks.class

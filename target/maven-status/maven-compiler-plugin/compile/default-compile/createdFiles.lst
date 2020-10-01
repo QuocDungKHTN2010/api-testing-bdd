@@ -1,0 +1,4 @@
+pojo/LoginPayload.class
+pojo/Isbn.class
+pojo/AddBooksPayload.class
+pojo/DeleteBookPayload.class

@@ -1,0 +1,371 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2020-10-01T07:03:38.619Z",
+        "before": [
+          {
+            "result": {
+              "duration": 2533000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.getToken()"
+            }
+          }
+        ],
+        "line": 8,
+        "name": "As user, I want to borrow books",
+        "description": "",
+        "id": "get--add--and-delete-book;as-user--i-want-to-borrow-books",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "a list isbn of books",
+            "match": {
+              "location": "stepDefinitions.Steps.aListIsbnOfBooks(io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "isbn"
+                ]
+              },
+              {
+                "cells": [
+                  "9781449325862"
+                ]
+              },
+              {
+                "cells": [
+                  "9781449331818"
+                ]
+              }
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1119000000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "user call \"addBooksAPI\" with \"post\" http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"addBooksAPI\"",
+                  "offset": 10
+                },
+                {
+                  "val": "\"post\"",
+                  "offset": 29
+                }
+              ],
+              "location": "stepDefinitions.Steps.user_call_with_http_request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3000000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "the API call got success with status code is 201",
+            "match": {
+              "arguments": [
+                {
+                  "val": "201",
+                  "offset": 45
+                }
+              ],
+              "location": "stepDefinitions.Steps.the_API_call_got_success_with_status_code_is(int)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@GetToken"
+          },
+          {
+            "name": "@HealthyCheckTest"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-10-01T07:03:42.327Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1112000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.getToken()"
+            }
+          }
+        ],
+        "line": 23,
+        "name": "As user, I want to delete a book",
+        "description": "",
+        "id": "get--add--and-delete-book;as-user--i-want-to-delete-a-book;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "an isbn of book \"9781449325862\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"9781449325862\"",
+                  "offset": 16
+                }
+              ],
+              "location": "stepDefinitions.Steps.anIsbnOfBook(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1092000000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "user call \"deleteBookAPI\" with \"delete\" http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"deleteBookAPI\"",
+                  "offset": 10
+                },
+                {
+                  "val": "\"delete\"",
+                  "offset": 31
+                }
+              ],
+              "location": "stepDefinitions.Steps.user_call_with_http_request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "the API call got success with status code is 204",
+            "match": {
+              "arguments": [
+                {
+                  "val": "204",
+                  "offset": 45
+                }
+              ],
+              "location": "stepDefinitions.Steps.the_API_call_got_success_with_status_code_is(int)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@GetToken"
+          },
+          {
+            "name": "@HealthyCheckTest"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-10-01T07:03:44.534Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1373000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.getToken()"
+            }
+          }
+        ],
+        "line": 24,
+        "name": "As user, I want to delete a book",
+        "description": "",
+        "id": "get--add--and-delete-book;as-user--i-want-to-delete-a-book;;3",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "an isbn of book \"9781449331818\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"9781449331818\"",
+                  "offset": 16
+                }
+              ],
+              "location": "stepDefinitions.Steps.anIsbnOfBook(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1222000000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "user call \"deleteBookAPI\" with \"delete\" http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"deleteBookAPI\"",
+                  "offset": 10
+                },
+                {
+                  "val": "\"delete\"",
+                  "offset": 31
+                }
+              ],
+              "location": "stepDefinitions.Steps.user_call_with_http_request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "the API call got success with status code is 204",
+            "match": {
+              "arguments": [
+                {
+                  "val": "204",
+                  "offset": 45
+                }
+              ],
+              "location": "stepDefinitions.Steps.the_API_call_got_success_with_status_code_is(int)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@GetToken"
+          },
+          {
+            "name": "@HealthyCheckTest"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-10-01T07:03:47.135Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1242000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinitions.Hooks.getToken()"
+            }
+          }
+        ],
+        "line": 33,
+        "name": "As user, I want to delete all books",
+        "description": "",
+        "id": "get--add--and-delete-book;as-user--i-want-to-delete-all-books;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "UserId \"50d02c25-7133-477c-97ca-e3782da569a7\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"50d02c25-7133-477c-97ca-e3782da569a7\"",
+                  "offset": 7
+                }
+              ],
+              "location": "stepDefinitions.Steps.userid(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1199000000,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "user call \"deleteAllBooksAPI\" with \"delete\" http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"deleteAllBooksAPI\"",
+                  "offset": 10
+                },
+                {
+                  "val": "\"delete\"",
+                  "offset": 35
+                }
+              ],
+              "location": "stepDefinitions.Steps.user_call_with_http_request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "the API call got success with status code is 204",
+            "match": {
+              "arguments": [
+                {
+                  "val": "204",
+                  "offset": 45
+                }
+              ],
+              "location": "stepDefinitions.Steps.the_API_call_got_success_with_status_code_is(int)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@GetToken"
+          },
+          {
+            "name": "@HealthyCheckTest"
+          }
+        ]
+      }
+    ],
+    "name": "Get, Add, and Delete book",
+    "description": "",
+    "id": "get--add--and-delete-book",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/features/ManageBookStore.feature",
+    "tags": []
+  }
+]

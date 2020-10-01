@@ -1,3 +1,5 @@
-/home/dungnguyen/bdd/apitesting/src/test/java/resources/Utils.java
-/home/dungnguyen/bdd/apitesting/src/test/java/stepDefinitions/Steps.java
-/home/dungnguyen/bdd/apitesting/src/test/java/runners/TestRunner.java
+/home/dungnguyen/bdd/api-test/api-testing-bdd/src/test/java/resources/Utils.java
+/home/dungnguyen/bdd/api-test/api-testing-bdd/src/test/java/stepDefinitions/Hooks.java
+/home/dungnguyen/bdd/api-test/api-testing-bdd/src/test/java/runners/TestRunner.java
+/home/dungnguyen/bdd/api-test/api-testing-bdd/src/test/java/stepDefinitions/Steps.java
+/home/dungnguyen/bdd/api-test/api-testing-bdd/src/test/java/resources/APIResources.java
