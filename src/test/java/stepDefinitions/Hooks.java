@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import data.DataDriven;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
@@ -18,6 +19,12 @@ public class Hooks {
         Steps steps = new Steps();
         steps.userid(steps.getGlobalValue("userId"));
         steps.user_call_with_http_request("deleteAllBooksAPI", "delete");
+    }
+
+    @Before(value = "@LoadDataFromExcel")
+    public void loadDataFromExcel() throws IOException {
+        DataDriven data = new DataDriven();
+        data.getData("Books","Add Book");
     }
 }
 

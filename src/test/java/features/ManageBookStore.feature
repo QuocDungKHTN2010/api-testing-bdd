@@ -39,3 +39,9 @@ Feature: Get, Add, and Delete book
     When user collects all ISBN of books
     When user call "addBooksAPI" with "post" http request
     Then the API call got success with status code is 201
+
+  @GetToken @DeleteAllBooks
+  Scenario: As user, I want to borrow all books from exel file
+    When user prepares payload from excel file
+    When user call "addBooksAPI2" with "post" http request
+    Then the API call got success with status code is 201

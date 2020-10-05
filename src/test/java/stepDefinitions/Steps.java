@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import data.DataDriven;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -8,16 +9,14 @@ import io.cucumber.java.en.When;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import org.apache.commons.compress.utils.Lists;
 import org.junit.Assert;
 import pojo.*;
 import resources.APIResources;
 import resources.Utils;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 public class Steps extends Utils {
@@ -25,6 +24,7 @@ public class Steps extends Utils {
     static String jsonString;
     private static LoginPayload loginPayload;
     private static AddBooksPayload addBooksPayload;
+    private static HashMap<String, Object> addBooksHashmapPayload;
     private static DeleteBookPayload deleteBookPayload;
     private static String USER_ID;
     GetBooksListResponse getBooksListResponse;
@@ -43,7 +43,6 @@ public class Steps extends Utils {
         if (method.equalsIgnoreCase("GET")) {
             switch (resource) {
                 case "getBooksAPI":
-//                    request.body(new byte[]{});
                     response = request.get(resourceAPI.getResource());
                     break;
                 case "getAccountAPI":
@@ -63,6 +62,10 @@ public class Steps extends Utils {
                     request.body(addBooksPayload);
                     response = request.post(resourceAPI.getResource());
                     break;
+                case "addBooksAPI2":
+                    request.body(addBooksHashmapPayload);
+                    response = request.post(resourceAPI.getResource());
+                    break;
                 case "createAccountAPI":
                     request.body(loginPayload);
                     response = request.post(resourceAPI.getResource());
@@ -77,6 +80,7 @@ public class Steps extends Utils {
                     response = request.delete(resourceAPI.getResource());
                     break;
                 case "deleteAllBooksAPI":
+                    request.body(new byte[]{});
                     response = request.delete(resourceAPI.getResource() + USER_ID);
                     break;
                 default:
@@ -127,10 +131,10 @@ public class Steps extends Utils {
     @And("Response body has an item with key {string} and value {string} in a sub-list {string}")
     public void responseBodyHasAnItemWithKeyAndValueInASubList(String keyValue, String expectedValue,
                                                                String parentKeyValue) {
-        List listParentValues = JsonPath.from(jsonString).get(parentKeyValue);
+        List<List<LinkedHashMap>> listParentValues = JsonPath.from(jsonString).get(parentKeyValue);
         boolean contains = false;
         for (int i = 0; i < listParentValues.size(); i++) {
-            List listChildValues = (List) listParentValues.get(i);
+            List<LinkedHashMap> listChildValues = listParentValues.get(i);
             for (int j = 0; j < listChildValues.size(); j++) {
                 LinkedHashMap map = (LinkedHashMap) listChildValues.get(j);
                 if (map.get(keyValue).equals(expectedValue)) {
@@ -157,4 +161,24 @@ public class Steps extends Utils {
             addBooksPayload.collectionOfIsbns.add(new Isbn(book.isbn));
         }
     }
+
+    @When("user prepares payload from excel file")
+    public void userPreparesPayloadFromExcelFile() throws IOException {
+        DataDriven dataDriven = new DataDriven();
+        ArrayList<String> data = dataDriven.getData("Books", "AddBook");
+
+        addBooksHashmapPayload = new HashMap<>();
+        addBooksHashmapPayload.put("userId", getGlobalValue("userId"));
+
+        List isbnList = Lists.newArrayList();
+        HashMap<String, Object> book1 = new HashMap<>();
+        book1.put("isbn", data.get(1));
+//        HashMap<String, Object> book2 = new HashMap<>();
+//        book2.put("isbn", data.get(2));
+        isbnList.add(book1);
+//        isbnList.add(book2);
+
+        addBooksHashmapPayload.put("collectionOfIsbns", isbnList);
+    }
+
 }
